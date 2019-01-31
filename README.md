@@ -17,10 +17,14 @@ This will be done automatically for you but it is good to build before starting.
 
 # Running the client
 
+```
 sbt "runMain com.mypackage.benchmark.BenchmarkClientMain <server hostname> <server port> <number of connections>"
+```
 
 # Running the server
 
+```
 sbt "runMain com.mypackage.benchmark.BenchmarkServerMain <port to listen on>"
+```
 
 
