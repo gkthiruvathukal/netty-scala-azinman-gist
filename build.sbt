@@ -1,10 +1,22 @@
-name := "netty-scala-azinman-gist"
+lazy val commonSettings = Seq(
+  name := "netty-scala-azinman-gist",
+  organization := "com.mypackage",
+  version := "1.0",
+  scalaVersion := "2.11.8"
+)
 
-version := "1.0"
 
-scalaVersion := "2.11.8"
+lazy val client = (project in file("server")).
+  settings(commonSettings: _*).
+  settings(
+    mainClass in assembly := Some("com.mypackage.benchmark.BenchmarkServerMain")
+  )
 
-scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked")
+lazy val server = (project in file("client")).
+  settings(commonSettings: _*).
+  settings(
+    mainClass in assembly := Some("com.mypackage.benchmark.BenchmarkClientMain")
+  )
 
 resolvers ++= Seq(
   "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
