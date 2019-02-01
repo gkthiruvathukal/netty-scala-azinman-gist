@@ -49,6 +49,7 @@ object BenchmarkClientMain {
 
   def main(args:Array[String]) : Unit = {
     //Configgy.configure("config/nettybenchmark.conf")
+    // TODO: Will replace with scopt. For now, we'll go with positional parameters.
     log.info("Launching Netty Client benchmark")
     configureBootstrap
     //val config = Configgy.config
