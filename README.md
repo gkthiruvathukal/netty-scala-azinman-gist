@@ -11,6 +11,7 @@ To run this code, `sbt` must be available. I can write some code to package a ja
 
 ```
 sbt compile
+sbt assembly
 ```
 
 This will be done automatically for you but it is good to build before starting.
@@ -18,13 +19,11 @@ This will be done automatically for you but it is good to build before starting.
 # Running the client
 
 ```
-sbt "runMain com.mypackage.benchmark.BenchmarkClientMain <server hostname> <server port> <number of connections>"
+java -jar client/target/scala-2.11/netty-benchmark-client.jar <server hostnae> <server port> <number of connections>
 ```
 
 # Running the server
 
 ```
-sbt "runMain com.mypackage.benchmark.BenchmarkServerMain <port to listen on>"
+java -jar server/target/scala-2.11/netty-benchmark-server.jar <server listening port>
 ```
-
-
